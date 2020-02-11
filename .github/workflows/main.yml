@@ -13,7 +13,6 @@ jobs:
     - name: Checkout repository contents
       uses: actions/checkout@v1
     - name: get changed files
-      run: |
-        git diff-tree --no-commit-id --name-only -r ${{ github.sha }} | grep "tex" 
+      run: echo 'git diff-tree --no-commit-id --name-only -r ${{ github.sha }} | grep "tex"' | bash 
       shell: bash
 
