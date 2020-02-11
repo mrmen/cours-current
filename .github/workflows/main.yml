@@ -13,4 +13,9 @@ jobs:
     - name: Checkout repository contents
       uses: actions/checkout@v1
     - name: get changed files
-      run: echo 'git diff-tree --no-commit-id --name-only -r ${{ github.sha }} | sed "/tex/!d"' | bash
+      run: echo 'git diff-tree --no-commit-id --name-only -r ${{ github.sha }} | sed "/tex/!d" > listtocompile' | bash
+    - name: Latex compiler
+      uses: Jatus93/Latex-multicompiler@master
+      with:
+        path_to_list: listtocompile
+        artifact: true
