@@ -15,7 +15,7 @@ jobs:
     - name: get changed files
       id: getfile
       run: |
-          echo "$(git diff-tree --no-commit-id --name-only -r ${{ github.sha }} | grep '.*.tex' > listtocompile)"
+          name=$(git diff-tree --no-commit-id --name-only -r ${{ github.sha }} | grep '.*.tex') && echo $name && echo $name > listtocompile
     - name: Latex compiler
       uses: Jatus93/Latex-multicompiler@master
       with:
