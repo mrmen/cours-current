@@ -20,3 +20,4 @@ jobs:
       uses: Jatus93/Latex-multicompiler@master
       with:
         path_to_list: listtocompile
+        artifact: true
