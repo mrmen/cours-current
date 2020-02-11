@@ -12,12 +12,11 @@ jobs:
     steps:
     - name: Checkout repository contents
       uses: actions/checkout@v1
-
-    - name: Compile LaTeX document
-      uses: xu-cheng/latex-action@master
+    - name: get changed files
+      id: getfile
+      run: |
+          echo "$(git diff-tree --no-commit-id --name-only -r ${{ github.sha }} | grep '.*.tex' > listtocompile)"
+    - name: Latex compiler
+      uses: Jatus93/Latex-multicompiler@master
       with:
-          root_file: ch2/main.tex
-    - uses: actions/upload-artifact@v1
-      with:
-        name: testing
-        path: main.pdf
+        path_to_list: listtocompile
