@@ -16,4 +16,4 @@ jobs:
     - name: Latex compiler
       uses: Jatus93/Latex-multicompiler@master
       with:
-        path_to_list: ch2/s1c2-ds-cor-stats.tex
+        path_to_list: listtocompile
