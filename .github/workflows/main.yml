@@ -17,10 +17,7 @@ jobs:
       uses: xu-cheng/latex-action@master
       with:
           root_file: ch2/main.tex
-    - name: send photo message
-      uses: appleboy/telegram-action@master
+    - uses: actions/upload-artifact@v1
       with:
-          to: 57185243
-          token: 656002531:AAFOoW2RvD8n-9Xtd03GbNPcaGqZ4f1JBeU
-          message: send photo message
-          document: ch2/main.pdf
+        name: testing
+        path: ch2/main.pdf
