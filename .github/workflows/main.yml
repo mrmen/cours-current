@@ -13,4 +13,4 @@ jobs:
     - name: Checkout repository contents
       uses: actions/checkout@v1
     - name: get changed files
-      run: echo 'git diff-tree --no-commit-id --name-only -r ${{ github.sha }} | grep -v "charset=utf-8$"' | bash
+      run: echo 'git diff-tree --no-commit-id --name-only -r ${{ github.sha }} | grep -v "tex"' | bash
