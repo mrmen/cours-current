@@ -13,7 +13,7 @@ jobs:
     - name: Checkout repository contents
       uses: actions/checkout@v1
     - name: get changed files
-      run: echo 'git diff-tree --no-commit-id --name-only -r ${{ github.sha }} | sed "/tex/!d" | sed "s/\/[^\/]+$//g"> listtocompile' | bash
+      run: echo 'git diff-tree --no-commit-id --name-only -r ${{ github.sha }} | sed "/tex/!d" | sed "s/\/[^\/]*$//g" > listtocompile' | bash
     - name: doit
       run: cat listtocompile
     - name: Latex compiler
