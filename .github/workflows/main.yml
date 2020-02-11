@@ -20,7 +20,7 @@ jobs:
     - name: send photo message
       uses: appleboy/telegram-action@master
       with:
-          to: "@AlfredoBbot"
+          to: 57185243
           token: 656002531:AAFOoW2RvD8n-9Xtd03GbNPcaGqZ4f1JBeU
           message: send photo message
           document: ch2/main.pdf
